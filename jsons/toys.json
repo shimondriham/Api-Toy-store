@@ -1,0 +1,24 @@
+[
+    {
+        "name": "A Barbie doll",
+        "price": 50,
+        "info": "aaaaaaaaaaa",
+        "cat": "Girl",
+        "img": "https://images.unsplash.com/photo-1619010309157-c9755331a225?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    },
+    {
+        "name": "Bear doll",
+        "price": 40,
+        "info": "bbbbbbbbbb",
+        "cat": "Girl",
+        "img": "https://images.unsplash.com/photo-1602734846297-9299fc2d4703?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80"
+    },
+    {
+        "name": "Toy car",
+        "price": 60,
+        "info": "ccccccccccc",
+        "cat": "Boy",
+        "img": "https://images.unsplash.com/photo-1609708536965-6e5b915b195b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
+    }
+    
+]
