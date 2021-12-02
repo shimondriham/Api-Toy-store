@@ -3,6 +3,7 @@ const { ToyModel, validateToys } = require("../models/toyModel")
 const {auth} = require("../middlewares/auth");
 const router = express.Router();
 
+// https://toys1234.herokuapp.com/toys
 // http://localhost:3000/toys/?s=doll
 // http://localhost:3000/toys/?page=1
 router.get("/", async (req, res) => {
@@ -28,12 +29,14 @@ router.get("/", async (req, res) => {
     }
 })
 
-
-// http://localhost:3000/toys/cat/Girl
+// https://toys1234.herokuapp.com/toys/cat/for%20Girls
+// http://localhost:3000/toys/cat/Girls
 router.get("/cat/:catname", async (req, res) => {
     let catname = req.params.catname;
     try {
-        let data = await ToyModel.find({ cat: catname })
+        let catnameRegX = new RegExp(catname, "i")
+        let data = await ToyModel.find({ cat: catnameRegX })
+        // let data = await ToyModel.find({ cat: catname })
         res.json(data)
     }
     catch (err) {
