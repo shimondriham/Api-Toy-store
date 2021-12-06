@@ -8,6 +8,9 @@ router.get("/", (req, res) => {
   res.json({ msg: "Users work" })
 })
 
+router.get("/checkToken", auth ,async(req,res) => {
+  res.json({status:"ok"})
+})
 
 router.get("/userInfo", auth , async (req, res) => {
   let user = await UserModel.findOne({_id:req.userTokenData._id},{password:0})
