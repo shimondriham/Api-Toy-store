@@ -11,7 +11,7 @@ const init = async() => {
   authUser();
 
   // בקשה לקבלת מידע של המשתמש
-  let url = "https://toys1234.herokuapp.com/users/myInfo";
+  let url = "https://toys1234.herokuapp.com/users/userInfo";
   let data = await doApiGet(url);
   console.log(data);
   document.querySelector("#id_name").innerHTML = data.name;

@@ -12,24 +12,24 @@ router.get("/checkToken", auth ,async(req,res) => {
   res.json({status:"ok"})
 })
 
-// router.get("/userInfo", auth , async (req, res) => {
-//   let user = await UserModel.findOne({_id:req.userTokenData._id},{password:0})
-//   res.json(user)
-// })
+router.get("/userInfo", auth , async (req, res) => {
+  let user = await UserModel.findOne({_id:req.userTokenData._id},{password:0})
+  res.json(user)
+})
 
-router.get("/myInfo", auth ,async(req,res) => {
-  try{
-    // לשלוף את המידע של היוזר
-    // 0 -> להציג את כל האחרים חוץ מהמאפיין
-    // 1 -> להציג רק את האמפיין
-    let data = await UserModel.findOne({_id:req.tokenData._id},{password:0})
-    res.json(data);
-  }
-  catch(err){
-    console.log(err);
-    res.status(500).json(err)
-  }
-}) 
+// router.get("/myInfo", auth ,async(req,res) => {
+//   try{
+//     // לשלוף את המידע של היוזר
+//     // 0 -> להציג את כל האחרים חוץ מהמאפיין
+//     // 1 -> להציג רק את האמפיין
+//     let data = await UserModel.findOne({_id:req.tokenData._id},{password:0})
+//     res.json(data);
+//   }
+//   catch(err){
+//     console.log(err);
+//     res.status(500).json(err)
+//   }
+// }) 
 
 
 
