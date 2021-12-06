@@ -6,10 +6,11 @@ window.onload = () => {
 }
 
 const init = async() => {
-
+  // פונקציה שבודקת אם למשתמש מותר להיות כאן
+  // רק משתמש עם טוקן תקף  יכול להיות כאן
   authUser();
 
-
+  // בקשה לקבלת מידע של המשתמש
   let url = "https://toys1234.herokuapp.com/users/myInfo";
   let data = await doApiGet(url);
   console.log(data);
