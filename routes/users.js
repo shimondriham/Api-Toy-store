@@ -17,8 +17,11 @@ router.get("/checkToken", auth ,async(req,res) => {
 //   res.json(user)
 // })
 
-router.get("/userInfo", auth ,async(req,res) => {
+router.get("/myInfo", auth ,async(req,res) => {
   try{
+    // לשלוף את המידע של היוזר
+    // 0 -> להציג את כל האחרים חוץ מהמאפיין
+    // 1 -> להציג רק את האמפיין
     let data = await UserModel.findOne({_id:req.tokenData._id},{password:0})
     res.json(data);
   }
