@@ -1,4 +1,4 @@
-import Toys from "./foodClass.js"
+import Toys from "./toysClass"
 
 window.onload = () => {
   init();
@@ -18,7 +18,7 @@ async function doApi() {
 
 const createAllToys = (_arJson) => {
   _arJson.forEach(item => {
-    let Toys = new Food("#id_row",item);
-    Toys.render();
+    let toys = new Toys("#id_row",item);
+    toys.render();
   })
 }

@@ -1,9 +1,9 @@
 class Toys{
     constructor(_parent,_item){
       this.parent = _parent;
-      this.cat = _item.cat;
       this.img = _item.img;
       this.name = _item.name;
+      this.cat = _item.cat;
       this.info = _item.info;
       this.price = _item.price;
     }
