@@ -1,15 +1,29 @@
 body{
-    background: wheat;
+    background-image: url(https://images.unsplash.com/photo-1587654780291-39c9404d746b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dG95c3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60);
+    background-size: cover;
+    background-position:top;
+    
 }
 .container{
     border-radius: 20px;
-    background: white;
-    margin-top: 10px;
-    padding:20px 200px ;
+    background: rgba(0, 0, 0, 0.521);
+    margin-top: 20px;
+    padding:50px ;
+}
+.container h1{
+    color: white;
+    margin: 0px;
+}
+.container .box{
+    background:rgba(255, 255, 255, 0.685);
+    /* margin: 2px; */
 }
 .container img{
-    max-width: 45%;
-    min-width: 40%;
-    max-height: 150px;
-    min-height: 100px;
+    /* max-width: 45%; */
+    /* min-width: 40%; */
+   height: 200px;
+    /* min-height: 200px; */
+}
+button{
+margin-top: 10px ;
 }

@@ -10,7 +10,7 @@ class Toys{
   
     render(){
       let div = document.createElement("div");
-      div.className = "col-lg-4 border p-2";
+      div.className = "col-md-4 g-1   border p-2  box";
       document.querySelector(this.parent).append(div);
   
       div.innerHTML = `
@@ -18,8 +18,14 @@ class Toys{
       <h2>${this.name}</h2>
       <div>Price: ${this.price} USD</div> 
       <div>usually: ${this.cat}</div>
-      <div>information: ${this.info}</div>
       `
+    let btn = document.createElement("button");
+    btn.className = "btn btn-light";
+    btn.innerHTML = "More info";
+    div.append(btn);
+    btn.addEventListener("click",function(){
+      alert(this.info)
+    }.bind(this))
     }
   }
   
