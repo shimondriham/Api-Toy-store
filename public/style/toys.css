@@ -8,6 +8,8 @@ body{
     padding:20px 200px ;
 }
 .container img{
-    /* width: 100px; */
-    height: 150px;
+    max-width: 45%;
+    min-width: 40%;
+    max-height: 150px;
+    min-height: 100px;
 }

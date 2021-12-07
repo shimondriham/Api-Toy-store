@@ -8,7 +8,7 @@ const router = express.Router();
 //?page= מספר עמוד ונפיל אותו בפר פייג'
 //?sort= לפי מה למיין את הרשימה
 router.get("/", async (req, res) => {
-      let perPage = req.query.perPage || 100;
+      let perPage = req.query.perPage || 10;
       let page = (req.query.page >= 1) ? req.query.page - 1: 0; 
       let sort = req.query.sort || "_id";
       let reverse = (req.query.r == "yes") ? -1 : 1 

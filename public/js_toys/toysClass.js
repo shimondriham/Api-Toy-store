@@ -14,7 +14,7 @@ class Toys{
       document.querySelector(this.parent).append(div);
   
       div.innerHTML = `
-      <img src="${this.img}"  class="float-start w-50 me-2" alt='${this.name}'>
+      <img src="${this.img}" class="float-start w-50 me-2" alt='${this.name}'>
       <h2>${this.name}</h2>
       <div>Price: ${this.price} USD</div> 
       <div>usually: ${this.cat}</div>
