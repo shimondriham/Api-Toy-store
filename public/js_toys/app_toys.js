@@ -1,4 +1,4 @@
-import Toys from "./toysClass"
+import Toys from "./toysClass.js"
 
 window.onload = () => {
   init();
@@ -9,7 +9,7 @@ const init = () => {
 }
 
 async function doApi() {
-  let url = "https://toys1234.herokuapp.com/toys/?perPage=100";
+  let url = "https://toys1234.herokuapp.com/toys";
   let resp = await fetch(url);
   let data = await resp.json();
   console.log(data);

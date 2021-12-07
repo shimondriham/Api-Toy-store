@@ -4,23 +4,19 @@ const {auth} = require("../middlewares/auth");
 const router = express.Router();
 
 // https://toys1234.herokuapp.com/toys
-// http://localhost:3000/toys/?s=doll
-// http://localhost:3000/toys/?page=1
+//?perPage= כמה להציג בעמוד
+//?page= מספר עמוד ונפיל אותו בפר פייג'
+//?sort= לפי מה למיין את הרשימה
 router.get("/", async (req, res) => {
-    try {
-        let page = req.query.page || 1;
-        let searchQ = req.query.s;
-        let query
-        if (!searchQ) {
-            query = {}
-        }
-        else {
-            let searchRegX = new RegExp(searchQ, "i")
-            query = ({ $or: [{ name: searchRegX }, { info: searchRegX }] });
-        }
-        let data = await ToyModel.find(query)
-            .limit(10)
-            .skip(((page - 1) * 10))
+      let perPage = req.query.perPage || 100;
+      let page = (req.query.page >= 1) ? req.query.page - 1: 0; 
+      let sort = req.query.sort || "_id";
+      let reverse = (req.query.r == "yes") ? -1 : 1 
+      try {
+        let data = await ToyModel.find({})
+        .limit(Number(perPage))
+        .skip(page * perPage)
+        .sort({[sort]:reverse})
         res.json(data)
     }
     catch (err) {
