@@ -13,7 +13,16 @@ router.get("/", async (req, res) => {
       let sort = req.query.sort || "_id";
       let reverse = (req.query.r == "yes") ? -1 : 1 
       try {
-        let data = await ToyModel.find({})
+        let searchQ = req.query.search;
+     let query 
+     if(!searchQ){
+       query = {}
+     }
+     else{
+       let searcRegX = new RegExp(searchQ, "i")
+       query =   {$or:[{name:searcRegX},{info:searcRegX}]}
+     }
+        let data = await ToyModel.find(query)
         .limit(Number(perPage))
         .skip(page * perPage)
         .sort({[sort]:reverse})
@@ -24,6 +33,7 @@ router.get("/", async (req, res) => {
         res.status(500).json({ err: "page must be between 1-end, or maby DB down" })
     }
 })
+
 
 
 router.get("/myData",auth , async(req,res) => {
