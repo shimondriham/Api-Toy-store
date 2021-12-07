@@ -6,7 +6,6 @@ export const doApiGet = async(_url) => {
       'content-type': "application/json"
    } })
   let data = await resp.json();
-  // פונקציה שהיא אסינק אוטומטית מחזירה את המידע כפרומיס
   return data;
 }
 
@@ -20,6 +19,5 @@ export const doApiMethod = async(_url, _method, _body) => {
       'content-type': "application/json"
    } })
   let data = await resp.json();
-  // פונקציה שהיא אסינק אוטומטית מחזירה את המידע כפרומיס
   return data;
 }

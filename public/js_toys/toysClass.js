@@ -10,7 +10,7 @@ class Toys{
   
     render(){
       let div = document.createElement("div");
-      div.className = "col-md-4 g-1   border p-2  box";
+      div.className = "col-xl-4 g-1   border p-2  box";
       document.querySelector(this.parent).append(div);
   
       div.innerHTML = `

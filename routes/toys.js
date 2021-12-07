@@ -37,14 +37,12 @@ router.get("/myData",auth , async(req,res) => {
   }
 })
 
-// https://toys1234.herokuapp.com/toys/cat/for%20Girls
 
 router.get("/cat/:catname", async (req, res) => {
     let catname = req.params.catname;
     try {
         let catnameRegX = new RegExp(catname, "i")
         let data = await ToyModel.find({ cat: catnameRegX })
-        // let data = await ToyModel.find({ cat: catname })
         res.json(data)
     }
     catch (err) {
@@ -71,8 +69,6 @@ router.get("/price", async(req,res) => {
   })
   
   
-
-//   http://localhost:3000/toys
 router.post("/", auth , async(req,res) => {
     let validBody = validateToys(req.body);
     if(validBody.error){
@@ -90,7 +86,7 @@ router.post("/", auth , async(req,res) => {
     }
   })
 
-//   http://localhost:3000/foods/idEdit
+
   router.put("/:idEdit", auth,async(req,res) => {
     let validBody = validateToys(req.body);
     if(validBody.error){
@@ -107,7 +103,7 @@ router.post("/", auth , async(req,res) => {
     }
   });
 
-  //   http://localhost:3000/foods/idDel
+
   router.delete("/:idDel", auth , async(req,res) => {
     let idDel = req.params.idDel;
     try{
