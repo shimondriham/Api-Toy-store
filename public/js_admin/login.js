@@ -32,7 +32,7 @@ const doApiLogin = async() => {
   // אם הצליח נקבל טוקן
   if(data.token){
     localStorage.setItem("tok",data.token);
-    window.location.href = "myinfo.html"
+    window.location.href = "adminToys.html"
   }
   else{
     alert("Email or password worng. or come back later!")

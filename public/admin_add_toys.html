@@ -1,0 +1,40 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Document</title>
+    <script src="js_admin/add_toys.js"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <nav class="bg-light p-2">
+        <a class="btn btn-outline-dark" href="adminToys.html">Home</a>
+        <a class="btn btn-outline-dark ms-2"  href="admin_add_toys.html">Add new food</a>
+      </nav>
+      <h1>Add new toys form</h1>
+      <div class="col-lg-6 p-3 shadow">
+        <form id="id_form">
+          <label>Name:</label>
+          <input placeholder="Name of toys..." type="text" class="form-control shadow-sm" id="id_name">
+          
+          <label>Price:</label>
+          <input  type="number" value="40" class="form-control shadow-sm" id="id_price">
+
+          <label>usually:</label>
+          <input  type="text" value="For both genders"  class="form-control shadow-sm" id="id_usually">
+
+          <label>info:</label>
+          <input placeholder="optional"  type="text" value=""  class="form-control shadow-sm" id="id_info">
+
+          <label>image:</label>
+          <input placeholder="optional" type="url" value=""  class="form-control shadow-sm" id="id_imge">
+
+          <button class="mt-3 btn btn-outline-dark">Add new product</button>
+        </form>
+      </div>
+    </div>
+  </body>
+  
+  </html>

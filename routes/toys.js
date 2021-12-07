@@ -25,6 +25,18 @@ router.get("/", async (req, res) => {
     }
 })
 
+// שולף מוצרים רק של המשתמש לפי האיי די בטוקן
+router.get("/myData",auth , async(req,res) => {
+  try{
+    let data = await ToyModel.find({user_id:req.userTokenData._id})
+    res.json(data)
+  }
+  catch(err){
+    console.log(err)
+    res.status(500).json({err:" DB down , come back later"})
+  }
+})
+
 // https://toys1234.herokuapp.com/toys/cat/for%20Girls
 // http://localhost:3000/toys/cat/Girls
 router.get("/cat/:catname", async (req, res) => {
@@ -62,7 +74,6 @@ router.get("/price", async(req,res) => {
 
 //   http://localhost:3000/toys
 router.post("/", auth , async(req,res) => {
-    // בדיקה שהריקוייסט באדי תקין /ולדזציה
     let validBody = validateToys(req.body);
     if(validBody.error){
       return res.status(400).json(validBody.error.details);
