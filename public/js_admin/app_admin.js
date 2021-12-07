@@ -7,7 +7,7 @@ window.onload = () => {
 }
 
 const init = () => {
-    authUser();
+  authUser();
   doApi();
 }
 
