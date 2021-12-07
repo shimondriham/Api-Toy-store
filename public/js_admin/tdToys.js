@@ -25,12 +25,14 @@ class TdToys {
       <td>${this.index + 1}</td>
       <td>${this.name}</td>
       <td>${this.price} USD</td>
+      <td>${this.cat}</td>
       <td>${this.info}</td>
-      <td>${this.img}</td>
+      <td>...</td>
       <td>
         <button class="btn btn-danger del_btn">Del</button>
         <button class="btn btn-dark">Edit</button>
       </td>
+     
       `
 
       let del_btn = tr.querySelector(".del_btn");

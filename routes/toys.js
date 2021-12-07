@@ -25,7 +25,7 @@ router.get("/", async (req, res) => {
     }
 })
 
-// שולף מוצרים רק של המשתמש לפי האיי די בטוקן
+
 router.get("/myData",auth , async(req,res) => {
   try{
     let data = await ToyModel.find({user_id:req.userTokenData._id})
@@ -38,7 +38,7 @@ router.get("/myData",auth , async(req,res) => {
 })
 
 // https://toys1234.herokuapp.com/toys/cat/for%20Girls
-// http://localhost:3000/toys/cat/Girls
+
 router.get("/cat/:catname", async (req, res) => {
     let catname = req.params.catname;
     try {
@@ -53,7 +53,7 @@ router.get("/cat/:catname", async (req, res) => {
     }
 })
 
-// http://localhost:3000/toys/price/?max=50&min=20&page=1
+
 router.get("/price", async(req,res) => {
     try{
       let page = req.query.page || 1;

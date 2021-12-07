@@ -49,7 +49,7 @@ const doApiWithMethod = async (_url, _bodyPayload, _method) => {
     let data = await resp.json();
     // אם יש הצלחה נקבל מאפיין איי די
     if (data._id) {
-      alert("Food added succefuly!")
+      alert("Toy added succefuly!")
       // מחזיר לעמוד בית
       window.location.href = "adminToys.html";
     }
