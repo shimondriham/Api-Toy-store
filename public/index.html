@@ -1,13 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style/index.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>welcome</h1>
+    <!-- <nav class=" p-2">
+        <a class="btn btn-outline-dark" href="">a</a>
+        <a class="btn btn-outline-dark ms-2" href="">b</a>
+    </nav> -->
+    <h1>Toys API Documentation</h1>
+    <div class="container">
+        <h2>Regular get routes :</h2>
+        <h5>(Without the need for token or Something from the body)</h5>
+        <br>
+        <table class="table1 table table-striped">
+            <thead>
+                <tr>
+                    <th>method</th>
+                    <th>Request</th>
+                    <th>explanation</th>
+                    <th>Default</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys">https://toys1234.herokuapp.com/toys</a></td>
+                    <td>View all products</td>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/?perPage=5">https://toys1234.herokuapp.com/toys/?perPage=5
+                        </a></td>
+                    <td>Several products per page</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/?page=2">https://toys1234.herokuapp.com/toys/?page=2
+                        </a></td>
+                    <td>Page number</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/?sort=price">https://toys1234.herokuapp.com/toys/?sort=price
+                        </a></td>
+                    <td>By what to sort the list</td>
+                    <td>id</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/?search=Lego">https://toys1234.herokuapp.com/toys/?search=Lego
+                        </a></td>
+                    <td>Search by name or info (It is also possible by part of a word)</td>
+                    <td>all</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/cat/for%20Girls">https://toys1234.herokuapp.com/toys/cat/for%20Girls
+                        </a></td>
+                    <td>Search by category (It is also possible by part of a word)</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/price/?max=50&min=20&page=1">https://toys1234.herokuapp.com/toys/price/?max=50&min=20&page=1
+                        </a></td>
+                    <td>Below or above the required price</td>
+                    <td>0><9999< /td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Special routes</h2>
+        <h5>(For the Postman )</h5>
+        <br>
+        <table class="table2 table table-striped">
+            <thead>
+                <tr>
+                    <th>method</th>
+                    <th>Properties (body)</th>
+                    <th>token (header)</th>
+                    <th>Request</th>
+                    <th>explanation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><button class="btn btn-success">POST</button></td>
+                    <td>name, email, password</td>
+                    <td>Not needed</td>
+                    <td><a href="https://toys1234.herokuapp.com/users">https://toys1234.herokuapp.com/users
+                        </a></td>
+                    <td>Add a new user</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-success">POST</button></td>
+                    <td>email, password</td>
+                    <td>Not needed</td>
+                    <td><a href="https://toys1234.herokuapp.com/users">https://toys1234.herokuapp.com/toys/login
+                        </a></td>
+                    <td>Registered user login</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-warning">GET</button></td>
+                    <td>---</td>
+                    <td>Need token</td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/userInfo">https://toys1234.herokuapp.com/toys/userInfo
+                        </a></td>
+                    <td>Show products of the same user only</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-success">POST</button></td>
+                    <td>name, price, info, cat, img</td>
+                    <td>Need token</td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/:id">https://toys1234.herokuapp.com/toys/:id
+                        </a></td>
+                    <td>Add a product from the same user</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-danger">DELETE</button></td>
+                    <td>---</td>
+                    <td>Need token</td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/:id">https://toys1234.herokuapp.com/toys/:id
+                        </a></td>
+                    <td>Add a product from the same user</td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-info">PUT</button></td>
+                    <td>name, price, info, cat, img</td>
+                    <td>Need token</td>
+                    <td><a href="https://toys1234.herokuapp.com/toys/:id">https://toys1234.herokuapp.com/toys/:id
+                        </a></td>
+                    <td>Product update by the same user</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="container">
+        <h2>user interface</h2>
+        <h5>(Existing users for testing: shimon@walla.com ,bill@walla.com password:123)</h5>
+        <br>
+        <table class="table2 table table-striped">
+            <thead>
+                <tr>
+
+                    <th>Link</th>
+                    <th>about</th>
+                    <th>The page sends to</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://toys1234.herokuapp.com/toys.html">https://toys1234.herokuapp.com/toys.html
+                        </a></td>
+                    <td>Presentation of all products sold on the site to customers</td>
+                    <td>---</td>
+                </tr>
+                <tr>
+                    <td><a href="https://toys1234.herokuapp.com/newAdmin.html">https://toys1234.herokuapp.com/newAdmin.html
+                        </a></td>
+                    <td>New user (seller) registration</td>
+                    <td>To the login</td>
+                </tr>
+                <tr>
+                    <td><a href="https://toys1234.herokuapp.com/login.html">https://toys1234.herokuapp.com/login.html
+                        </a></td>
+                    <td>User login page (seller) for the personal area</td>
+                    <td>To the personal area</td>
+                </tr>
+                <tr>
+                    <td><a href="https://toys1234.herokuapp.com/adminToys.html">https://toys1234.herokuapp.com/adminToys.html
+                        </a></td>
+                    <td>The personal area for deleting and adding a product</td>
+                    <td>After deleting the product the page refreshes itself</td>
+                </tr>
+                <tr>
+                    <td><a href="https://toys1234.herokuapp.com/admin_add_toys.html">https://toys1234.herokuapp.com/admin_add_toys.html
+                        </a></td>
+                    <td>Adding a product in the personal field</td>
+                    <td>To the personal area</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <footer class="">
+        <p>© Created by Shimon Dariham </p>
+        <div class=" linkedin">
+            <a href="https://www.linkedin.com/in/shimon-driham-b2225a219/"><img src="images/icons2_linkedin.png"
+                    alt="youtube"></a>
+        </div>
+    </footer>
+
+
+
+
 </body>
+
 </html>
