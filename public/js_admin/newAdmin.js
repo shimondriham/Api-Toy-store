@@ -11,7 +11,7 @@ const declareEvents = () => {
     doApi();
   })
 }
-const doApi = () => {
+const doApi = async() => {
  let url = "https://toys1234.herokuapp.com/users";
     let body = {
       name: document.querySelector("#id_name").value,
