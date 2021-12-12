@@ -1,0 +1,62 @@
+ממשק משתמש צד לקוח
+
+הצגה של כל המוצרים הנמכרים באתר ללקוחות
+https://toys1234.herokuapp.com/toys.html
+
+דף כניסת משתמש (מוכרים)לאיזור אישי 
+https://toys1234.herokuapp.com/login.html
+
+האיזור האישי שמגיעם לאחר כניסה למחיקת והוספת מוצר
+https://toys1234.herokuapp.com/adminToys.html
+
+הוספת מוצר בתוך האיזור האישי
+https://toys1234.herokuapp.com/admin_add_toys.html
+ 
+משתמשים קיימים לבדיקה 
+shimon@walla.com
+obama@walla.com
+bill@walla.com
+קוד 123
+___________________________
+דוגמאות לקישורים לגי'סון 
+
+הצגה כללית
+https://toys1234.herokuapp.com/toys
+
+perPage=x כמה מוצרים בדף (ברירת מחדל=10)
+https://toys1234.herokuapp.com/toys/?perPage=5
+
+page=x מספר עמוד (ברירת מחדל=1)
+https://toys1234.herokuapp.com/toys/?page=2
+
+sort=x לפי מה למיין את הרשימה (ברירת מחדל=id)
+https://toys1234.herokuapp.com/toys/?sort=price
+
+search=x  חיפוש בשם או באינפו (אפשר גם אות אחת)
+https://toys1234.herokuapp.com/toys/?search=Lego
+
+cat/x   לפי קטגוריה (אפשר גם מילה או אות מתוך הקטגוריה)
+https://toys1234.herokuapp.com/toys/cat/for%20Girls
+
+price/?max=x    price/?min=x    מתחת או מעל מחיר הנדרש  (ברירת מחדל=9999> <0)
+https://toys1234.herokuapp.com/toys/price/?max=50&min=20&page=1
+__________
+עבודה מול פוסטמן 
+
+הוספת משתמש (בבאדי:  name,email,password ) POST
+https://toys1234.herokuapp.com/users
+
+כניסת משתמש לקבלת תוקן לגישה להוספה ומחיקה  (בבאדי:  email,password ) POST
+https://toys1234.herokuapp.com/toys/login
+
+הצגת מוצרים של אותו משתמש בלבד  GET
+https://toys1234.herokuapp.com/toys/userInfo
+
+הוספת מוצר (מתאפשר רק עם תוקן) (בבאדי: name,price,info,cat,img  ) POST
+https://toys1234.herokuapp.com/toys/id
+
+מחיקת מוצר (מתאפשר רק עם תוקן) DELETE
+https://toys1234.herokuapp.com/toys/id
+
+עדכון מוצר (מתאפשר רק עם תוקן) PUT
+https://toys1234.herokuapp.com/toys/id

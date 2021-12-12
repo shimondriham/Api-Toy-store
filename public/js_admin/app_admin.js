@@ -11,7 +11,7 @@ const init = () => {
   doApi();
 }
 
-const doApi = async() => {
+const doApi = async () => {
 
   let url = "https://toys1234.herokuapp.com/toys/myData";
   let data = await doApiGet(url);
@@ -21,29 +21,31 @@ const doApi = async() => {
 
 const createTable = (_arJson) => {
   document.querySelector("#id_tbody").innerHTML = ""
-  _arJson.forEach((item,i) => {
-    let tr = new TdToys("#id_tbody",item,i, delToys);
+  _arJson.forEach((item, i) => {
+    let tr = new TdToys("#id_tbody", item, i, delToys);
     tr.render()
   })
 }
 
-const delToys = async(_id) => {
+
+const delToys = async (_id) => {
   try {
-    let urlDel = "https://toys1234.herokuapp.com/toys/"+_id;
+    let urlDel = "https://toys1234.herokuapp.com/toys/" + _id;
     let resp = await fetch(urlDel, {
       method: "DELETE",
       body: JSON.stringify({}),
-    headers: { 
-        "x-api-key":localStorage["tok"],
+      headers: {
+        "x-api-key": localStorage["tok"],
         'content-type': "application/json"
-     } })
+      }
+    })
     let data = await resp.json();
-    if(data.deletedCount == 1){
+    if (data.deletedCount == 1) {
       alert("deleted success");
       doApi();
     }
   }
-  catch(err){
+  catch (err) {
     console.log(err)
     alert("THere problem, come back later!");
   }
