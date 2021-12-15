@@ -3,10 +3,7 @@ const { ToyModel, validateToys } = require("../models/toyModel")
 const {auth} = require("../middlewares/auth");
 const router = express.Router();
 
-// https://toys1234.herokuapp.com/toys
-//?perPage= כמה להציג בעמוד
-//?page= מספר עמוד ונפיל אותו בפר פייג'
-//?sort= לפי מה למיין את הרשימה
+
 router.get("/", async (req, res) => {
       let perPage = req.query.perPage || 10;
       let page = (req.query.page >= 1) ? req.query.page - 1: 0; 
