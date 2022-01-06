@@ -24,10 +24,10 @@ class TdToys {
       <td>...</td>
       <td>
         <button class="btn btn-danger del_btn">Del</button>
-        <button class="btn btn-dark">Edit</button>
       </td>
       `
-
+      // <button class="btn btn-dark">Edit</button>
+      
       let del_btn = tr.querySelector(".del_btn");
       del_btn.addEventListener("click", () => {
         if (confirm(`are you sure you want delete ${this.name} ?`)) {
