@@ -16,10 +16,11 @@ let userSchema = new mongoose.Schema({
 })
 
 exports.UserModel = mongoose.model("users", userSchema);
+const {config} = require("../config/secret");
 
 
 exports.genToken = (_userId,_name) => {
-  let token = jwt.sign({_id:_userId,name:_name},"shimonSecret",{expiresIn:"40000mins"})
+  let token = jwt.sign({_id:_userId,name:_name},config.TokenSecret,{expiresIn:"40000mins"})
   return token;
 }
 
