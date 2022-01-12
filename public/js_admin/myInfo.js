@@ -7,7 +7,7 @@ window.onload = () => {
 
 const init = async() => {
   authUser();
-  let url = "https://toys1244.herokuapp.com/users/userInfo";
+  let url = "https://toys1234.herokuapp.com/users/userInfo";
   let data = await doApiGet(url);
   console.log(data);
   document.querySelector("#id_name").innerHTML = data.name;

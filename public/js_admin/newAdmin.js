@@ -12,7 +12,7 @@ const declareEvents = () => {
   })
 }
 const doApi = async() => {
- let url = "https://toys1244.herokuapp.com/users";
+ let url = "https://toys1234.herokuapp.com/users";
     let body = {
       name: document.querySelector("#id_name").value,
       email: document.querySelector("#id_email").value,

@@ -13,7 +13,7 @@ const init = () => {
 
 const doApi = async () => {
 
-  let url = "https://toys1244.herokuapp.com/toys/myData";
+  let url = "https://toys1234.herokuapp.com/toys/myData";
   let data = await doApiGet(url);
   console.log(data);
   createTable(data);
@@ -30,7 +30,7 @@ const createTable = (_arJson) => {
 
 const delToys = async (_id) => {
   try {
-    let urlDel = "https://toys1244.herokuapp.com/toys/" + _id;
+    let urlDel = "https://toys1234.herokuapp.com/toys/" + _id;
     let resp = await fetch(urlDel, {
       method: "DELETE",
       body: JSON.stringify({}),

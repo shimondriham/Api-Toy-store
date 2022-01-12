@@ -17,7 +17,7 @@ const declareEvents = () => {
       info: document.querySelector("#id_info").value,
       img: document.querySelector("#id_imge").value
     }
-    let url = "https://toys1244.herokuapp.com/toys";
+    let url = "https://toys1234.herokuapp.com/toys";
     doApiWithMethod(url, bodyObj, "POST");
   })
 }
