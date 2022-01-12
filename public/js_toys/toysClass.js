@@ -10,7 +10,7 @@ class Toys{
   
     render(){
       let div = document.createElement("div");
-      div.className = "col-xl-4 g-1   border p-2  box";
+      div.className = "col-md-6 col-xl-4  p-3 box";
       document.querySelector(this.parent).append(div);
   
       div.innerHTML = `
@@ -20,7 +20,7 @@ class Toys{
       <div>usually: ${this.cat}</div>
       `
     let btn = document.createElement("button");
-    btn.className = "btn btn-light";
+    btn.className = "btn btn-dark";
     btn.innerHTML = "More info";
     div.append(btn);
     btn.addEventListener("click",function(){
